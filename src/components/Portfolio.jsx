@@ -9,10 +9,9 @@ const PROFILE = {
   name: "Sharmitha",
   tagline1: "Computer Science Undergraduate",
   tagline2: "Aspiring Software Developer",
-  email: "sharmitha@example.com",
-  phone: "+91 98765 43210",
-  github: "https://github.com/sharmitha",
-  linkedin: "https://linkedin.com/in/sharmitha",
+  email: "subhasharmi2006@gmail.com",
+  github: "https://github.com/sharmitha2006",
+  linkedin: "https://www.linkedin.com/in/sharmitha-sv",
 };
 
 const ABOUT =
@@ -29,7 +28,7 @@ const EDUCATION = [
 ];
 
 const SKILLS = {
-  Programming: ["Python", "C", "Java", "JavaScript"],
+  Programming: ["Python", "C", "JavaScript"],
   Web: ["HTML", "CSS"],
   Tools: ["GitHub", "VS Code", "Arduino", "Tableau"],
 };
@@ -37,8 +36,24 @@ const SKILLS = {
 const PROJECTS = [
   {
     title: "IoT Based Teacher Absence Detection System",
-    bits: ["ESP8266", "Sensors", "Real-time monitoring", "Automation"],
+    description:
+      "Designed an embedded system using Arduino to monitor teacher presence in classrooms. Utilized RFID technology for identification.",
+    bits: ["Arduino", "RFID", "IoT"],
     rotate: -3,
+  },
+  {
+    title: "Webpage for Improving Environmental Education Among School Students",
+    description:
+      "Created an interactive website using HTML, CSS and JavaScript to educate school students about environmental conservation. Incorporated quizzes and visual content.",
+    bits: ["HTML", "CSS", "JavaScript"],
+    rotate: 2,
+  },
+  {
+    title: "Bruh - World of Event Management",
+    description:
+      "Developed a dynamic event management website using HTML, CSS and JavaScript with event creation, registration, and real-time updates.",
+    bits: ["HTML", "CSS", "JavaScript"],
+    rotate: -2,
   },
 ];
 
@@ -48,6 +63,7 @@ const CERTIFICATIONS = {
     "Programming in Python",
     "Foundation in Data Science",
     "Introduction to Machine Learning",
+    "Software Testing"
   ],
   SCALAR: ["Fundamentals of JavaScript"],
 };
@@ -61,17 +77,24 @@ const WORKSHOPS = [
 
 const INDUSTRIAL_VISITS = [
   {
-    place: "Software Technology Park",
-    location: "Chennai, Tamil Nadu",
-    note: "Explored enterprise software development and agile workflows in practice.",
+    place: "Shristi Innovations",
+    location: "Trivandram",
+    
   },
 ];
 
 const SYMPOSIA = [
   {
-    title: "Paper Presentation — Emerging Trends in IoT",
-    venue: "National Level Technical Symposium",
-    note: "Presented research on low-cost embedded monitoring systems.",
+    name:"Submitted idea in Smart India Hackathon 2025",
+  },
+  {
+    name:"Presented research paper on Blockchain Technology in Healthcare"
+  },
+  {
+    name:"Submitted ideas in EY Techathon 6.0"
+  },
+  {
+    name:"Participated in AI curated hackathon conducted by SRM Institute of Science and Technology"
   },
 ];
 
@@ -518,7 +541,7 @@ const Hero = ({ dark }) => (
     <Leaf className="absolute bottom-10 left-[10%] w-8 h-14 rotate-12 hidden md:block" />
     <Star className="absolute top-[18%] left-[18%] w-4 h-4" color={dark ? "#C9B8F5" : "#F4C95D"} />
 
-    <div className="relative max-w-4xl w-full grid md:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+    <div className="relative max-w-3xl w-full mx-auto text-center">
       <FadeIn delay={0.1}>
         <p
           className={`text-lg md:text-xl mb-2 ${dark ? "text-[#C9B8F5]" : "text-[#B98AA0]"}`}
@@ -545,7 +568,7 @@ const Hero = ({ dark }) => (
           {PROFILE.tagline2}
         </p>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           <motion.a
             href="#"
             whileHover={{ y: -3 }}
@@ -582,27 +605,7 @@ const Hero = ({ dark }) => (
         </div>
       </FadeIn>
 
-      <FadeIn delay={0.3}>
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="relative mx-auto w-56 h-56 md:w-72 md:h-72"
-        >
-          <svg viewBox="0 0 200 200" className="w-full h-full">
-            <circle cx="100" cy="100" r="92" fill={dark ? "#3D335A" : "#F8D9E0"} opacity="0.5" />
-            <circle cx="100" cy="78" r="34" fill={dark ? "#5A4D7A" : "#F2E2D0"} />
-            <path d="M68 78C68 60 130 60 132 78C134 100 120 120 100 120C80 120 66 100 68 78Z" fill={dark ? "#5A4D7A" : "#F2E2D0"} />
-            <path d="M66 70C70 48 130 48 134 70C120 58 80 58 66 70Z" fill={dark ? "#2B2440" : "#6B4A38"} />
-            <circle cx="88" cy="82" r="3" fill={dark ? "#2B2440" : "#6B4A38"} />
-            <circle cx="112" cy="82" r="3" fill={dark ? "#2B2440" : "#6B4A38"} />
-            <path d="M92 94Q100 100 108 94" stroke={dark ? "#2B2440" : "#6B4A38"} strokeWidth="2" fill="none" strokeLinecap="round" />
-            <rect x="74" y="118" width="52" height="48" rx="14" fill={dark ? "#8E7BD4" : "#D9E8D5"} />
-            <circle cx="60" cy="50" r="3" fill="#F4C95D" />
-            <circle cx="140" cy="56" r="2.4" fill="#F4C95D" />
-            <circle cx="146" cy="130" r="2.6" fill="#F4C95D" />
-          </svg>
-        </motion.div>
-      </FadeIn>
+      
     </div>
 
     <motion.div
@@ -864,6 +867,12 @@ const Projects = ({ dark }) => (
               >
                 {p.title}
               </p>
+              <p
+                  className="text-sm text-[#6B5C6F] mb-3 leading-relaxed"
+                style={{ fontFamily: "'Nunito', sans-serif" }}
+>
+                {p.description}
+                </p>
               <div className="flex flex-wrap gap-1.5">
                 {p.bits.map((b) => (
                   <span
@@ -1084,51 +1093,52 @@ const Symposium = ({ dark }) => (
 
     <div className="max-w-3xl mx-auto">
       <SectionHeading ribbon="#F2E7D5" dark={dark}>
-        Symposium &amp; paper presentation
+        Symposium &amp; Hackathons
       </SectionHeading>
 
-      {SYMPOSIA.map((s, i) => (
-        <FadeIn key={s.title} delay={i * 0.1}>
-          <motion.div
-            whileHover={{ y: -4, rotate: 0 }}
-            initial={{ rotate: -1.5 }}
-            className="relative p-7 md:p-9"
-            style={{
-              backgroundColor: dark ? "#3A3050" : "#F6F1E7",
-              boxShadow: "0 14px 28px rgba(80,60,50,0.14)",
-              border: `1px solid ${dark ? "rgba(255,255,255,0.1)" : "#D9CBB0"}`,
-            }}
-          >
-            <WashiTape className="-top-3 left-8" color="#F8D9E0" angle={-8} />
-            <Paperclip className="absolute -top-3 right-8 w-5 h-10 rotate-[12deg]" />
+      <div className="space-y-6">
+        {SYMPOSIA.map((s, i) => (
+          <FadeIn key={i} delay={i * 0.1}>
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="relative p-6 rounded-xl"
+              style={{
+                backgroundColor: dark ? "#3A3050" : "#FDF8F3",
+                boxShadow: "0 10px 20px rgba(80,60,50,0.12)",
+                border: `1px solid ${
+                  dark ? "rgba(255,255,255,0.1)" : "#E8DCC8"
+                }`,
+              }}
+            >
+              <WashiTape
+                className="-top-3 left-8"
+                color="#F8D9E0"
+                angle={-8}
+              />
 
-            <p
-              className={`text-[11px] uppercase tracking-[0.2em] mb-2 ${
-                dark ? "text-[#B7A9DE]" : "text-[#8A7A6E]"
-              }`}
-              style={{ fontFamily: "'Nunito', sans-serif" }}
-            >
-              {s.venue}
-            </p>
-            <h3
-              className={`text-2xl md:text-3xl mb-3 leading-snug ${dark ? "text-[#F3EEFF]" : "text-[#3A3030]"}`}
-              style={{ fontFamily: "'Playfair Display', serif", borderBottom: `2px solid ${dark ? "#5A4D7A" : "#3A3030"}`, paddingBottom: 10 }}
-            >
-              {s.title}
-            </h3>
-            <p
-              className={`text-sm md:text-base leading-relaxed columns-1 ${dark ? "text-[#D8CFF0]" : "text-[#5A4A3E]"}`}
-              style={{ fontFamily: "'Nunito', sans-serif" }}
-            >
-              {s.note}
-            </p>
-          </motion.div>
-        </FadeIn>
-      ))}
+              <div className="flex items-start gap-4">
+                <span className="text-2xl">📌</span>
+
+                <h3
+                  className={`text-lg md:text-xl ${
+                    dark ? "text-[#F3EEFF]" : "text-[#3A3030]"
+                  }`}
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontWeight: 700,
+                    lineHeight: "1.6",
+                  }}
+                >
+                  {s.name}
+                </h3>
+              </div>
+            </motion.div>
+          </FadeIn>
+        ))}
+      </div>
     </div>
   </section>
 );
-
 /* ---------------------------------------------------------
    10. CONTACT — postcard
 --------------------------------------------------------- */
@@ -1166,9 +1176,9 @@ const Contact = ({ dark }) => (
             <div className="space-y-3 text-sm">
               {[
                 ["Email", PROFILE.email, `mailto:${PROFILE.email}`],
-                ["Phone", PROFILE.phone, `tel:${PROFILE.phone}`],
-                ["GitHub", "github.com/sharmitha", PROFILE.github],
-                ["LinkedIn", "linkedin.com/in/sharmitha", PROFILE.linkedin],
+                
+                ["GitHub","https://github.com/sharmitha2006",PROFILE.github],
+                ["LinkedIn", "https://www.linkedin.com/in/sharmitha-sv",PROFILE.linkedin],
               ].map(([label, value, href]) => (
                 <a
                   key={label}
